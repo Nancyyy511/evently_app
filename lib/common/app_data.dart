@@ -81,4 +81,17 @@ class AppData {
           'بالذكريات.',
     ),
   ];
+
+  //login Assets
+  static const email = "assets/icons/sms.svg";
+  static const password = "assets/icons/lock.svg";
+  static const eyeToggle = "assets/icons/eye-slash.svg";
+
+  static const google = "assets/images/google.png";
+
+  //Signup ASsets
+  static const user = "assets/icons/user.svg";
+
+  //forget password assets
+  static const forgetPassword = "assets/images/change-setting.png";
 }

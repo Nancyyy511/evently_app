@@ -1,7 +1,10 @@
+import 'package:evently_app/auth/login/login_screen.dart';
+import 'package:evently_app/auth/forget_password/forget_password_screen.dart';
 import 'package:evently_app/onboarding/onboarding_screen.dart';
 import 'package:evently_app/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:evently_app/auth/register/register_screen.dart';
 import 'package:evently_app/firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
 
@@ -64,6 +67,12 @@ class _MyAppState extends State<MyApp> {
           languageCode: languageCode,
           onLanguageChanged: changeLanguage,
         ),
+
+        LoginScreen.routeName: (_) => LoginScreen(),
+
+        RegisterScreen.routeName: (_) => RegisterScreen(),
+
+        ForgetPasswordScreen.routeName: (_) => const ForgetPasswordScreen(),
       },
 
       initialRoute: OnboardingScreen.routeName,
