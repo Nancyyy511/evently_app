@@ -1,4 +1,7 @@
 import 'package:evently_app/onboarding/onbarding_model.dart';
+import 'package:evently_app/home/models/category_model.dart';
+import 'package:evently_app/home/models/event_model.dart';
+import 'package:flutter/widgets.dart';
 
 class AppData {
   static const evently = "assets/images/Evently.png";
@@ -94,4 +97,63 @@ class AppData {
 
   //forget password assets
   static const forgetPassword = "assets/images/change-setting.png";
+
+  //home Asset
+  static const home = "assets/icons/home-2.svg";
+  static const favourite = "assets/icons/heart.svg";
+  static const favouriteFilled = "assets/icons/heart-filled.svg";
+
+  static const all = "assets/icons/all.svg";
+  static const birthday = "assets/icons/birthday-cake.svg";
+  static const sport = "assets/icons/sport.svg";
+  static const book = "assets/icons/book.svg";
+
+  static const birthdayBgLight = "assets/images/birthdaylight.png";
+  static const mettingBgLight = "assets/images/meetinglight.png";
+  static const exhibitionBgLight = "assets/images/exhibitionlight.png";
+  static const sportBgLight = "assets/images/sportlight.png";
+  static const bookClubBgLight = "assets/images/bookclublight.png";
+
+  static const birthdayBgDark = "assets/images/birthdaydark.png";
+  static const mettingBgDark = "assets/images/meetingdark.png";
+  static const exhibitionBgDark = "assets/images/exhibitiondark.png";
+  static const sportBgDark = "assets/images/sportdark.png";
+  static const bookClubBgDark = "assets/images/bookclubdark.png";
+
+  static const List<CategoryModel> categories = [
+    CategoryModel(icon: AppData.all, title: 'All'),
+
+    CategoryModel(icon: AppData.birthday, title: 'Birthday'),
+    CategoryModel(icon: AppData.sport, title: 'Sport'),
+
+    CategoryModel(icon: AppData.book, title: 'Book Club'),
+    CategoryModel(icon: AppData.home, title: 'Meeting'),
+    CategoryModel(icon: AppData.favourite, title: 'Exhibition'),
+  ];
+
+  static List<EventModel> events = [];
+
+  //favourite screen
+  static const search = "assets/icons/search.svg";
+
+  //profile screen
+  static const logout = "assets/icons/logout.svg";
+
+  // Add event categories
+  static const List<CategoryModel> addEventCategories = [
+    CategoryModel(icon: AppData.birthday, title: 'Birthday'),
+    CategoryModel(icon: AppData.sport, title: 'Sport'),
+    CategoryModel(icon: AppData.book, title: 'Book Club'),
+    CategoryModel(icon: AppData.home, title: 'Meeting'),
+    CategoryModel(icon: AppData.favourite, title: 'Exhibition'),
+  ];
+
+  //event details screen
+  static const edit = "assets/icons/edit.svg";
+  static const delete = "assets/icons/trash.svg";
+
+  static final ValueNotifier<int> eventsRevision = ValueNotifier<int>(0);
+  static void notifyEventsChanged() {
+    eventsRevision.value++;
+  }
 }

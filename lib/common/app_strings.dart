@@ -124,4 +124,120 @@ class AppStrings {
       ? 'تعذّر تحميل بيانات حسابك. يرجى المحاولة مرة أخرى.'
       : 'Could not load your account data. Please try again.';
 
+  // Layout
+  String get home => isArabic ? 'الرئيسية' : 'Home';
+  String get favorite => isArabic ? 'المفضلة' : 'Favorite';
+  String get profile => isArabic ? 'الملف الشخصي' : 'Profile';
+
+  // Home and event lists
+  String get welcomeBack => isArabic ? 'مرحبًا بعودتك ✨' : 'Welcome Back ✨';
+  String get noEventsCreated => isArabic
+      ? 'لم تقم بإنشاء أي فعاليات بعد.'
+      : 'You haven’t created any events yet.';
+  String get noEventsFound => isArabic ? 'لا توجد فعاليات' : 'No events found';
+
+  // Category ids stay English (used for filtering and images); only the
+  // displayed name is translated
+  String categoryName(String id) {
+    if (!isArabic) return id;
+    switch (id) {
+      case 'All':
+        return 'الكل';
+      case 'Birthday':
+        return 'عيد ميلاد';
+      case 'Sport':
+        return 'رياضة';
+      case 'Book Club':
+        return 'نادي الكتاب';
+      case 'Meeting':
+        return 'اجتماع';
+      case 'Exhibition':
+        return 'معرض';
+      default:
+        return id;
+    }
+  }
+
+  // Event dates are stored as DateTime and formatted per language
+  static const _monthsEn = [
+    'Jan',
+    'Feb',
+    'Mar',
+    'Apr',
+    'May',
+    'Jun',
+    'Jul',
+    'Aug',
+    'Sep',
+    'Oct',
+    'Nov',
+    'Dec',
+  ];
+  static const _monthsAr = [
+    'يناير',
+    'فبراير',
+    'مارس',
+    'أبريل',
+    'مايو',
+    'يونيو',
+    'يوليو',
+    'أغسطس',
+    'سبتمبر',
+    'أكتوبر',
+    'نوفمبر',
+    'ديسمبر',
+  ];
+
+  String eventDate(DateTime date) =>
+      '${date.day} ${(isArabic ? _monthsAr : _monthsEn)[date.month - 1]}';
+
+  // Favourites
+  String get searchForEvent => isArabic ? 'ابحث عن فعالية' : 'Search for event';
+  String get noFavourites =>
+      isArabic ? 'لا توجد فعاليات مفضلة بعد' : 'No favourite events yet';
+  String get noMatchingEvents =>
+      isArabic ? 'لا توجد فعاليات مطابقة' : 'No matching events found';
+
+  // Event details
+  String get eventDetails => isArabic ? 'تفاصيل الفعالية' : 'Event Details';
+  String get noDescription =>
+      isArabic ? 'لا يوجد وصف' : 'No description available';
+  String get deleteEvent => isArabic ? 'حذف الفعالية' : 'Delete Event';
+  String get deleteEventConfirm => isArabic
+      ? 'هل أنت متأكد أنك تريد حذف هذه الفعالية؟'
+      : 'Are you sure you want to delete this event?';
+
+  // Add / edit event
+  String get addEvent => isArabic ? 'إضافة فعالية' : 'Add Event';
+  String get editEvent => isArabic ? 'تعديل الفعالية' : 'Edit Event';
+  String get saveChanges => isArabic ? 'حفظ التغييرات' : 'Save Changes';
+  String get title => isArabic ? 'العنوان' : 'Title';
+  String get eventTitleHint => isArabic ? 'عنوان الفعالية' : 'Event Title';
+  String get eventDescriptionHint =>
+      isArabic ? 'وصف الفعالية...' : 'Event Description...';
+  String get eventDateLabel => isArabic ? 'تاريخ الفعالية' : 'Event Date';
+  String get chooseDate => isArabic ? 'اختر التاريخ' : 'Choose date';
+  String get eventTimeLabel => isArabic ? 'وقت الفعالية' : 'Event Time';
+  String get chooseTime => isArabic ? 'اختر الوقت' : 'Choose time';
+  String get eventLocationLabel =>
+      isArabic ? 'موقع الفعالية' : 'Event Location';
+  String get chooseLocation => isArabic ? 'اختر الموقع' : 'Choose Location';
+  String get chooseEventDate =>
+      isArabic ? 'اختر تاريخ الفعالية' : 'Choose Event Date';
+  String get chooseEventTime =>
+      isArabic ? 'اختر وقت الفعالية' : 'Choose Event Time';
+  String get enterEventLocation =>
+      isArabic ? 'أدخل موقع الفعالية' : 'Enter event location';
+  String get completeEventDetails => isArabic
+      ? 'يرجى إكمال جميع تفاصيل الفعالية'
+      : 'Please complete all event details';
+
+  // Profile
+  String get darkMode => isArabic ? 'الوضع الداكن' : 'Dark Mode';
+  String get logout => isArabic ? 'تسجيل الخروج' : 'Logout';
+  String get noEmail =>
+      isArabic ? 'لا يوجد بريد إلكتروني' : 'No email available';
+  String get logoutFailed => isArabic
+      ? 'تعذّر تسجيل الخروج. يرجى المحاولة مرة أخرى.'
+      : 'Could not log out. Please try again.';
 }
